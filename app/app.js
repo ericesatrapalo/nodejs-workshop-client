@@ -1,0 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import TopBar from './components/TopBar';
+import BookList from './components/BookList';
+
+injectTapEventPlugin();
+
+class BookManager extends React.Component {
+
+    render() {
+        return (
+            <MuiThemeProvider muiTheme={getMuiTheme('_lightBaseTheme2.default')}>
+                <div>
+                    <TopBar />
+                    <BookList />
+                </div>
+            </MuiThemeProvider>
+        );
+    }
+}
+
+ReactDOM.render(
+    <BookManager/>,
+    document.getElementById('content')
+);
