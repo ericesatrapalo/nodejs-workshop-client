@@ -1,27 +1,52 @@
+# NodeJS Workshop client (Electron + ReactJS)
+
+## Initialization
+
+```
+npm install
+npm run build
+npm start
+```
 
 ##Development
 
-
-./node_modules/webpack/bin/webpack.js -p -w
-./node_modules/webpack/bin/webpack.js -p
-
-./node_modules/webpack/bin/webpack.js -w
-
+```
+npm run watch
+npm run dev
+```
 
 ### React
-https://github.com/facebookincubator/create-react-app
 
 
 
-##Distribution
+## Distribution
 
 http://electron.atom.io/docs/tutorial/application-distribution/
 
 
 
 
+## Scripts
 
-##Example
-http://electron.atom.io/docs/
-https://github.com/electron/electron-api-demos
-https://scotch.io/tutorials/build-a-music-player-with-react-electron-i-setup-basic-concepts
+|Command|Description|
+|---|---|
+|```npm start```|Starts Electron application|
+|```npm run dev```|Starts Electron application in development mode|
+|```npm run web```|Starts web application (macOS + Chrome only)|
+|```npm run compile```|Builds webpack (javascript compilation) once|
+|```npm run watch```|Starts webpack builder in watch mode|
+|```npm run pack```|Generates package folder (for testing purposes)|
+|```npm run dist```|Packages project in a distributable for current architecture|
+|```npm run distall```|Packages project distributables for Windows, Linux and Mac|
+
+[Required tools for distall](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build)
+
+## Docs and references
+
+[Electron reference docs](http://electron.atom.io/docs/)
+
+[Electron API demos](https://github.com/electron/electron-api-demos)
+
+[Webpack reference docs](https://webpack.github.io/docs)
+
+[Material UI reference docs](http://www.material-ui.com/#/components)

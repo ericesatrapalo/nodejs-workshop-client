@@ -6,9 +6,9 @@ import {List} from 'material-ui/List';
 import BookListElement from '../components/BookListElement';
 import BookCard from '../components/BookCard';
 
-const API_URL = 'http://localhost:3030/api/0.1/';
+const API_URL = 'http://localhost:3000/api/0.1/';
 
-class BookList extends React.Component {
+class BookManager extends React.Component {
 
     constructor(props) {
         super(props);
@@ -111,4 +111,4 @@ class BookList extends React.Component {
     }
 }
 
-export default BookList;
+export default BookManager;
