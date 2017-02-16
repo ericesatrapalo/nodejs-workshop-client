@@ -8,23 +8,12 @@ npm run build
 npm start
 ```
 
-##Development
+## Development
 
 ```
 npm run watch
 npm run dev
 ```
-
-### React
-
-
-
-## Distribution
-
-http://electron.atom.io/docs/tutorial/application-distribution/
-
-
-
 
 ## Scripts
 
@@ -41,12 +30,18 @@ http://electron.atom.io/docs/tutorial/application-distribution/
 
 [Required tools for distall](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build)
 
+## Known bugs
+
+Cancel editing twice fails. Check behavior
+
 ## Docs and references
 
-[Electron reference docs](http://electron.atom.io/docs/)
+[Electron reference docs](http://electron.atom.io/docs)
 
 [Electron API demos](https://github.com/electron/electron-api-demos)
 
 [Webpack reference docs](https://webpack.github.io/docs)
 
 [Material UI reference docs](http://www.material-ui.com/#/components)
+
+[Material icons](https://material.io/icons)

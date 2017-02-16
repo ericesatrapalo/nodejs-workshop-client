@@ -43,24 +43,26 @@ class BookManager extends React.Component {
     }
 
     handleBookSelectedBook() {
-        let bookData = this.getCurrentlySelectedBook();
+        let selectedBook = this.getCurrentlySelectedBook();
 
-        alert(`${bookData.name} booked! (to be implemented)`);
         // TODO Implement booking
+        selectedBook.available = false;
+        this.handleSelectBook(undefined);
     }
 
     handleRemoveSelectedBook() {
-        let bookData = this.getCurrentlySelectedBook();
+        let selectedBook = this.getCurrentlySelectedBook();
 
-        if (confirm(`Do you REALLY want to remove ${bookData.name}?`)) {
-            alert(`${bookData.name} removed! (to be implemented)`);
+        if (confirm(`Do you REALLY want to remove ${selectedBook.name}?`)) {
             // TODO Implement book removal
+
+            this.setState({ books: this.state.books.filter((book) => (book.id !== selectedBook.id)) });
+            this.handleSelectBook(undefined);
         }
     }
 
     handleUpdateSelectedBook(bookData) {
-        console.log(bookData);
-        this.handleSelectBook(undefined);
+        // TODO Implement book update
     }
 
     loadDataFromAPI() {
@@ -68,7 +70,10 @@ class BookManager extends React.Component {
 
         axios.get(requestUrl)
             .then(response => {
-                this.setState({ books: response.data });
+                this.setState({ books: response.data.map(book => {
+                    book.available = true;
+                    return book;
+                }) });
             })
             .catch(error => {
                 alert(`${error.message} on GET at ${requestUrl}`);
@@ -96,7 +101,7 @@ class BookManager extends React.Component {
     }
 
     renderSelectedBookCard() {
-        let book = JSON.parse(JSON.stringify(this.getCurrentlySelectedBook()));
+        let book = this.getCurrentlySelectedBook();
 
         return (
             <BookCard

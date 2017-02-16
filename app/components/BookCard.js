@@ -29,6 +29,7 @@ class BookCard extends React.Component {
 
     updateData() {
         this.props.onUpdate(this.refs.form.getData());
+        this.setEditMode(false);
     }
 
     render() {
@@ -50,7 +51,7 @@ class BookCard extends React.Component {
                     />
                 </CardText>
                 <CardActions>
-                    <RaisedButton label="Book" onMouseDown={() => this.props.onBooking()} />
+                    <RaisedButton label="Book" onMouseDown={() => this.props.onBooking()} disabled={!bookData.available} />
                     {
                         editMode?
                             <RaisedButton label="Save" onMouseDown={() => this.updateData()} />
