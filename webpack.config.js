@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     context: __dirname + '/app',
     entry: {
-        book_manager: ['./App.js']
+        book_manager: ['./index.js']
     },
     output: {
         path: __dirname + '/public/js',
