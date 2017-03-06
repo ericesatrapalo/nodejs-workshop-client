@@ -24,6 +24,7 @@ const BookCard = (props) => {
         actions = [
             <FlatButton label="Save" onTouchTap={() => props.onSave(props.book)} />,
             <FlatButton label="Reset" onTouchTap={() => props.onStartEditing()} />,
+            <FlatButton label="Cancel" onTouchTap={() => props.onStopEditing()} />,
             ...actions
         ];
     } else {

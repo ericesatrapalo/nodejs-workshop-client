@@ -45,7 +45,9 @@ class App extends React.Component {
 
     updateBook(book, data) {
         //api.returnBook(book).then(this.props.dispatchUpdateBook(book, data));
-        this.props.dispatchBookBook(book);
+        console.log(book);
+        console.log(data);
+        //this.props.dispatchSaveBook(book, data);
     }
 
     resetBook(book) {
@@ -85,6 +87,7 @@ class App extends React.Component {
                     onReset={() => this.resetBook(this.props.book)}
                     onClose={() => this.props.dispatchUnselectBook()}
                     onStartEditing={() => this.props.dispatchStartEditing(this.props.book)}
+                    onStopEditing={() => this.props.dispatchStopEditing()}
                 />
             </div>
         );
@@ -100,11 +103,13 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     dispatchSelectBook: actions.selectBook,
     dispatchUnselectBook: actions.unselectBook,
-    dispatchStartEditing: actions.startEditing,
     dispatchLoadBooks: actions.loadBooks,
     dispatchDeleteBook: actions.deleteBook,
     dispatchBookBook: actions.bookBook,
-    dispatchReturnBook: actions.returnBook
+    dispatchReturnBook: actions.returnBook,
+    dispatchSaveBook: actions.saveBook,
+    dispatchStartEditing: actions.startEditing,
+    dispatchStopEditing: actions.stopEditing
 };
 
 export default connect(

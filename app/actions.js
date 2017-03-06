@@ -34,19 +34,6 @@ export const saveBook = (book, data) => ({
     data: data
 });
 
-export const startEditing = book => ({
-    type: START_EDITING,
-    data: book
-});
-
-export const resetForm = book => startEditing(book);
-
-export const updateField = (field, value) => ({
-    type: UPDATE_FIELD,
-    field: field,
-    value: value
-});
-
 export const bookBook = book => ({
     type: BOOK_BOOK,
     book: book
@@ -55,4 +42,12 @@ export const bookBook = book => ({
 export const returnBook = book => ({
     type: RETURN_BOOK,
     book: book
+});
+
+export const startEditing = book => ({
+    type: START_EDITING
+});
+
+export const stopEditing = () => ({
+    type: STOP_EDITING
 });
