@@ -29,7 +29,7 @@ class App extends React.Component {
     }
 
     deleteBook(book) {
-        //api.deleteBook(book).then(this.props.dispatchDeleteBook(book));
+        api.deleteBook(book).then(this.props.dispatchDeleteBook(book));
         this.props.dispatchDeleteBook(book);
     }
 
