@@ -18,7 +18,7 @@ class App extends React.Component {
     loadBooks() {
         api.fetchBooks().then(response => {
             this.props.dispatchLoadBooks(response.data.map(book => {
-                book.available = true;
+                book.available = (typeof book.reservation === 'undefined');
                 book.cover = {
                     small: `http://covers.openlibrary.org/b/isbn/${book.isbn}-S.jpg`,
                     large: `http://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`
